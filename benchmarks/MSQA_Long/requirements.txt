@@ -1,0 +1,6 @@
+tqdm
+openai
+requests
+retrying
+pandas
+json_repair

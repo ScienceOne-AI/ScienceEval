@@ -1,0 +1,6 @@
+Jinja2
+numpy
+openai==1.97.0
+pandas
+Requests
+tqdm

@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: labbench
+Version: 0.1.0
+Project-URL: issues, https://github.com/Future-House/LAB-Bench/issues
+Project-URL: repository, https://github.com/Future-House/LAB-Bench
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: anthropic
+Requires-Dist: chembench
+Requires-Dist: datasets
+Requires-Dist: google-auth>=2.31
+Requires-Dist: openai~=1.0
+Requires-Dist: pydantic~=2.0
+Requires-Dist: python-dotenv
+Requires-Dist: Pillow
+Requires-Dist: tenacity
+Requires-Dist: tqdm
+Requires-Dist: vertexai
+Provides-Extra: dev
+Requires-Dist: mypy>=1.8; extra == "dev"
+Requires-Dist: pre-commit>=3.4; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-xdist; extra == "dev"
+Requires-Dist: types-tqdm; extra == "dev"
+Dynamic: license-file

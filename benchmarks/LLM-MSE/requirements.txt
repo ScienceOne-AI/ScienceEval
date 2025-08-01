@@ -1,0 +1,5 @@
+tqdm
+openai
+requests
+retrying
+pandas

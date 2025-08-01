@@ -1,0 +1,954 @@
+Question,Type,Difficulty,True Answer,Number of Options
+"32 g of solid sugar is added to 68 g of liquid water at room temperature
+and allowed to reach equilibrium. No solid sugar is observed within
+the container. The temperature is then lowered to a temperature T1
+and allowed to reach equilibrium. At temperature T1 it is observed
+that only solid sugar and solid water (ice) exist. There is no solubility
+of sugar in solid water, nor of water in solid sugar. How many grams
+of ice are present in this container?
+(a) 68 g
+(b) 32 g
+(c) 36 g
+(d) None of these options",Original,Easy,a,4
+"A newly discovered element ZZZ (sleepium) has an atomic radius of
+128 pm, a molar mass of 64.55 g/mol, and forms an FCC crystal, what
+would you estimate the density of ZZZ to be?
+(a) 9.0 g/cm^-3
+(b) 25.5 g/cm^-3
+(c) 16.5 g/cm^-3
+(d) 3.2 g/cm^-3",Original,Hard,a,4
+"A photon with a wavelength of 300 nm is absorbed by an atom. An
+electron is promoted to a higher energy level na but loses energy
+through non-radiative processes (doesn't emit light), and reaches energy level nb. The electron then drops down to its ground level,
+emitting a photon with a wavelength of 700 nm. What is the energy
+difference between na and nb?
+(a) 2.36 eV
+(b) 3.01 eV
+(c) 1.77 eV
+(d) 1.54 eV",Original,Medium,a,4
+"You are given two thin film samples of a semiconductor polymer for
+the next generation of fexible iPhones. One is doped n-type, and the
+other is p-type. The mobility for electrons and holes, respectively,
+are 1053 and 575 cm2 V^-1 s^-1. The n-doped and p-doped samples
+have a conductivity of 0.39 Ohm^-1 m^-1 and 0.32 Ohm^-1 m^-1, repectively.
+Determine the relative dopant concentration between samples.
+(a) The p-type concentration is 1.5 times higher than the n-type
+(b) The n-type concentration is 1.6 times higher than the p-type
+(c) The p-type concentration is 1.8 times higher than the n-type
+(d) The n-type concentration is 1.4 times higher than the n-type",Original,Hard,a,4
+"An 80 kg person must stand at the mid-span of a concrete beam
+supported on either end. The beam has height 8 cm, width 13 cm,
+and the concrete has a fracture strength of 28 MPa. Determine the
+maximum possible span for this beam, such that fracture will not
+occur.
+(a) None of these options
+(b) 247 m
+(c) 20 m
+(d) 30 m",Original,Hard,c,4
+"Which of the following items would you expect to be optically transparent?
+A. Non-porous, polycrystalline, silicon dioxide
+B. Non-porous, single crystal, silicon dioxide
+C. Porous, polycrystalline, silicon dioxide
+D. Porous, single crystal, silicon dioxide",Original,Medium,b,4
+"An alien species makes first contact with humans on Earth. They have a
+different standard state, but interestingly they still use the Joule as the unit of energy.
+They are interested in our barbecues and so they calculate the enthalpy change for the
+combustion of one mole of propane. Do they calculate the same enthalpy change for this
+reaction as we do?
+A. No
+B. Unable to determine
+C. Yes",Original,Medium,c,3
+"A reaction with a positive enthalpy change and a negative entropy change will
+be spontaneous under which of the following conditions?
+A. Never
+B. At high temperature
+C. At all temperatures
+D. At low temperatures",Original,Easy,a,4
+"30 g of water is added to 70 g of sugar, cooled to -30 C and allowed to reach
+equilibrium. How many grams of ice will be present?
+A. 70 g
+B. 30 g
+C. 100 g
+D. 0 g
+",Original,Easy,b,4
+"A sample of a heavily cold worked 316L stainless steel is heated for several hours in a furnace at 1065 C. The sample is then allowed to cool to room temperature. Relative to the value before the heat treatment, the Young's modulus after this heat treatment will be which of the following?
+(a) The same as (b) Greater than (c) Less than
+(d) Unable to determine with information provided",Original,Medium,a,2
+"A sample of a heavily cold worked 316L stainless steel is heated for several hours in a furnace at 1065 C. The sample is then allowed to cool to room temperature. Relative to the value before the heat treatment, the yield strength after this heat treatment will be which of the following?
+(a) Less than (b) Greater than
+(c) The same as
+(d) Unable to determine with information provided",Original,Medium,a,4
+"A sample of a heavily cold worked 316L stainless steel is heated for several hours in a furnace at 1065 C. The sample is then allowed to cool to room temperature. Relative to the value before the heat treatment, the plastic deformation at fracture after this heat treat- ment will be which of the following?
+(a) Greater than (b) Less than
+(c) The same as
+(d) Unable to determine with information provided",Original,Medium,a,4
+"Which of the following is the best description of the difference between a vacancy and a pore?
+(a) A vacancy involves only a single missing atom, whereas a pore involves a massive number, say 109 of missing atoms
+(b) A vacancy occurs within a crystal, whereas a pore exists on the surface
+(c) A vacancy is a linear imperfection, whereas a pore is a three dimensional imperfection
+(d) None of these options.",Original,Easy,a,4
+"Stress is described as being sample size independent for which of the following reasons?
+(a) Because stress is force per unit area, so larger samples will also require larger force to achieve the same stress.
+(b) Because stress is a dimensionless quantity
+(c) Because stress is always the same, regardless of how many times you repeat a test
+(d) None of these options.",Original,Easy,a,4
+"Young's modulus is described as being structure independent for which of the following reasons?
+(a) Because Young's modulus relates to a specific bond type, which does not change with microstructural changes
+(b) Because Young's modulus is a dimensionless quantity
+(c) Because Young's modulus does not depend on the size of a sam- ple being tested
+(d) None of these options.",Original,Easy,a,4
+"The stored elastic strain energy in tempered glass can be roughly related to which of the following?
+(a) The surface energy liberated during fracture
+(b) The strain energy surrounding dislocations in the glass (c) The thermal energy used to produce the glass
+(d) None of these options.",Original,Medium,a,4
+"Which of the following is the best explanation for the reason that a few atoms in a solid at room temperature may have enough kinetic energy to break free of their nearest neighbour atoms, while the majority are held in place by bonds?
+(a) There is a distribution of energies for a population of atoms (b) Crystalline imperfections mean that there will randomly be some missing bonds
+(c) This occurs only to impurity atoms
+(d) These result from manufacturing defects",Original,Medium,a,4
+"A steel bar having a yield strength of 450 MPa, an ultimate tensile strength of 530 MPa and
+dimensions 23 mm * 118 mm * 5900 mm is loaded in tension along its long axis. Which of the
+following forces will cause the final length to be larger than 5900 mm, without necking?
+a) 1.2 kN
+b) 1.5 MN
+c) 1.3 MN
+d) 2.1 kN",Original,Hard,c,4
+"Which of the following would be expected to change the Young's modulus of a metallic
+sample?
+a) Adding 1 atomic percentage impurity to the metal
+b) Processing the metal to decrease the its grain (crystal) size
+c) Increasing the strength through plastic deformation
+d) Increasing the temperature to 0.6 Tm",Original,Medium,d,4
+"A colleague states, ""the strength of this ceramic sample is 845 MPa."" Which of the following is
+most likely to be the strength that your colleague is actually referring to?
+a) The yield strength
+b) The ultimate tensile strength
+c) The fracture strength
+d) The 0.2% offset yield strength",Original,Easy,c,4
+"A paper you are reading states that a newly developed ceramic material was determined to
+have strengths of 450 MPa and 1020 MPa. Which of the following are most likely to be the
+material properties being referred to?
+a) The compressive strength and the bending strength
+b) The yield strength and the bending strength
+c) The bending strength and the compressive strength
+d) The bending strength and the yield strength",Original,Easy,c,4
+"You come across handbook of material properties. Someone has spilled coffee on this book
+and some of an important sentence is hidden by the coffee spill. The sentence is, ""Tensile
+testing was performed on this new aluminum alloy and the _________ was determined to be
+68.5 GPa."" Which of the following words is most likely to fill in the blank?
+a) Young's modulus
+b) Yield strength
+c) Proportional limit
+d) Ductility",Original,Easy,a,4
+"An extremely high strength metallic sample is prepared in a lab and is found to have
+entirely brittle behaviour. The Young's modulus and fracture strength of this metal
+are known to be 100 GPa and 1.1 GPa, respectively. What would the strain at
+fracture be if the toughness of this metal is known to be the same as a ceramic with a
+toughness of 0.6 * 106 J/m3
+.
+
+a) 0.02
+b) 0.0005
+c) 0.001
+d) 0.0003",Original,Hard,c,4
+"The higher strength of tempered glass over standard, non-tempered glass is
+attributed to which of the following?
+a) The tensile residual stresses at the surface of the glass, due to the lower
+volume of the surface
+b) The compressive residual stresses at the surface of the glass, due to the
+lower volume of the surface
+c) The tensile residual stresses at the surface of the glass, due to the higher
+volume of the surface
+d) The compressive residual stresses",Original,Medium,d,4
+"Which of the following could best be described as the beginning of fracture in a
+metallic sample?
+a) The proportional limit
+b) The fracture strength
+c) The yield strength
+d) The ultimate tensile strength",Original,Medium,d,4
+"Which of the following is the best description of the true stress?
+
+a) The stress supported by the sample, accounting for the reduction in the
+load-bearing cross-sectional area
+
+b) The stress determined from the instantaneous load and the initial load-
+bearing cross-sectional area
+
+c) The stress supported by the sample, accounting for the initial load and the
+reduced cross-sectional area
+d) None of the above",Original,Easy,a,4
+"Which of the following most closely describes the beginning of non-uniform plastic
+deformation in a metallic sample?
+a) The proportional limit
+b) The 0.2% offset yield strength
+c) The ultimate tensile strength
+d) None of the above",Original,Easy,c,4
+"Which of the following most closely describes the beginning of non-uniform elastic
+deformation in a metallic sample?
+a) The elastic limit
+b) The 0.2% offset yield strength
+c) The ultimate tensile strength
+d) None of the above",Original,Medium,d,4
+"Which of the following most closely describes the ductility of a sample?
+
+a) The plastic strain at fracture
+b) The elastic strain at fracture
+c) The total strain at fracture
+d) None of the above",Original,Easy,a,4
+"Which of the following describes the resilience compared to the toughness of a
+theoretically fully brittle sample?
+a) The resilience will be greater than the toughness
+b) The resilience will be less than the toughness
+c) None of these options
+d) The resilience will be equal to the toughness",Original,Medium,d,4
+"Which of the following is a reasonable justification for the use of the
+0.2% offset yield strength?
+(a) This offset represents exactly the point where mild steel begins
+to undergo uniform plastic deformation.
+
+(b) It is difficult to determine from experimental data where uni-
+form plastic deformation begins.
+
+(c) It is difficult to determine from experimental data where non-
+uniform plastic deformation begins.
+
+(d) None of these are reasonable.",Original,Easy,b,4
+"Two rectangular cross-section beams are prepared from the same ce-
+ramic material. The first beam has length 78 mm, height 9.1 mm,
+
+and width 18 mm, while the second beam has length 51 mm, height
+9.4 mm, and width 12 mm. The first beam is found to fracture when
+the applied load, in three-point bending, is 2520 N. What load will
+the second beam fracture at?
+(a) 1735.4 N
+(b) 1195.1 N
+(c) 1156.9 N
+(d) 2741.6 N",Original,Hard,d,4
+"A hypothetical metal alloy is loaded in tension to just before fracture,
+at which point the strain is observed to be 0.03. The sample is then
+unloaded completely and the strain is found to be 0.02. If the Young's
+modulus of this alloy is 143 GPa, what is the fracture stress of this
+alloy?
+(a) 1430.0 MPa
+(b) 2.86 MPa
+(c) 4.29 MPa
+(d) 4290.0 MPa",Original,Hard,a,4
+"A hypothetical FCC metal has a density of 6.0 g/cm3 , a molar mass of 85.53 g/mol and an energy for vacancy formation of 0.86 eV/atom. The Boltzmann constant is 8.617*10^5 eV/K. Which of the following is the correct number of vacancies in this metal at equilibrium at 928 C?
+(a) 1.04e+19 vacancies/cm3
+(b) 9.05e+17 vacancies/cm3
+(c) 1.71e+26 vacancies/cm3
+(d) 8.92e+20 vacancies/cm3",Original,Hard,a,4
+"Which of the following strengthening mechanisms would you expect
+to change the Young's modulus of a metal?
+(a) None of these.
+(b) Minor alloying additions (solid solution).
+(c) Grain size reduction.
+(d) Cold working.",Original,Medium,a,4
+"An hypothetical metal has a close packed crystal structure, a density
+of 8.0 g/cm3 and a molar mass of 63.1 g/mol. Which of the following is the correct number of atoms per unit volume for this metal?
+(a) 9.54e+21 atoms/cm3
+(b) 7.63e+22 atoms/cm3
+(c) 8.38e-22 atoms/cm3
+(d) 1.27e-01 atoms/cm3",Original,Medium,b,4
+"An hypothetical ceramic has the sodium chloride crystal structure.
+The anion and cation radii are 0.199 nm and 0.101 nm, respectively.
+The anion and cation molar masses are 25.29 g/mol and 45.45 g/mol, respectively. Which of the following is the theoretical density of thisceramic?
+(a) 2.18 g/cm3 .
+(b) 1.09 g/cm3 .
+(c) 0.54 g/cm3 .
+(d) 4.35 g/cm3 .",Original,Medium,a,4
+"Which of the following is the correct coordination number for atoms
+within the BCC crystal structure?
+(a) 4.
+(b) 8.
+(c) 12.
+(d) 6.",Original,Easy,b,4
+"Which of the following is necessarily true on the stress strain curve
+for a typical ductile metal?
+(a) The yield strength must be higher than the proportional limit
+(b) The fracture strength must be higher than the yield strength
+(c) The onset of necking must occur at a lower stress than the
+fracture strength
+(d) The beginning of uniform plastic deformation must be lower
+than the fracture strength",Original,Medium,a,4
+"Which of the following statements is false?
+(a) An alloying element addition that forms a compound with the
+solvent atoms is an example of a three dimensional imperfection.
+(b) A minor alloying element addition forming a solid solution is an
+example of a point imperfection.
+
+(c) A grain boundary can be characterized as an interfacial imper-
+fection.
+
+(d) A vacancy is an example of a dislocation.",Original,Easy,d,4
+"A hypothetical metal alloy is loaded in tension to a stress of 740 MPa,
+at which point the strain is observed to be 0.02. The sample is then
+unloaded completely and the strain is found to be 0.01. What is the
+Young's modulus of this alloy?
+(a) 74.0 GPa
+(b) 12210.0 GPa
+(c) 37.0 GPa
+(d) 7.4 GPa",Original,Medium,a,4
+"A cylindrical cross-section tensile specimen is loaded such that the
+stress in the reduced section is 461 MPa. If the diameter of the
+
+reduced section and the grip region are 28.7 mm and 47.5 mm, re-
+spectively, what is the stress in the grip region?
+
+(a) 1262.8 MPa
+(b) 7994.1 MPa
+(c) 278.5 MPa
+(d) 168.3 MPa",Original,Hard,d,4
+"Assuming there exist more than two possible energy states for a hypothetical population of atoms, which of the following statements is true of the distributuon of atoms over possible energy states for this
+population of atoms at infinitely high temperature?
+(a) Only the highest and the lowest energy states will be populated.
+(b) Only the lowest energy state will be populated.
+(c) Only the highest energy state will be populated.
+(d) All of the possible energy states will be equally populated.",Original,Hard,d,4
+"A hypothetical metal tensile specimen with a Young's modulus of
+110 GPa has an initial length of 37900 mm and is loaded in tension
+beyond the yield strength. The sample is then unloaded completely
+and is found to have an unloaded length of 39300 mm. The sample is
+then loaded again until it's loaded length is 39500 mm. What is the
+stress that the sample is loaded to on this second cycle?
+(a) 6.04 MPa
+(b) 754.62 MPa
+(c) 5821.88 MPa
+(d) 6036.94 MPa",Original,Hard,b,4
+"Two cylindrical cross-section tensile specimens are produced from the
+same material. Sample A has a diameter of 16.9 mm while sample
+B has a diameter of 40.6 mm. If both samples are loaded by a force
+of 1600 N and sample A elongates by 535 mm, what will be the
+elongation of sample B?
+(a) 92.9 mm
+(b) 222.9 mm
+(c) 1284.0 mm
+(d) 3081.6 mm",Original,Hard,a,4
+"Modern, high-efficiency furnaces are known as condensing furnaces,
+meaning that the water vapour produced from combustion of the fuel
+is condensed to reclaim the enthalpy of vaporization to contribute
+to heating the air. Assuming 3582 g of water vapour per hour in the
+furnace exhaust gases at 218 C is condensed and cooled to 26 C, how
+much heating power is contributed through the condensation process?
+The molar mass of water is 18.015 g/mol, the enthalpy of fusion is
+6.01 kJ/mol, the enthalpy of vaporization is 40.7 kJ/mol, and the
+molar heat capacity of the gas, liquid, and solid are 36.4 J/mol*K,
+75.3 J/mol*K, and 37.7 J/mol*K, respectively. Note that 1 W = 1
+J/s.
+(a) 1.69 kW
+(b) 2.8 kW
+(c) 0.56 kW
+(d) 2.64 kW",Original,Hard,b,4
+"A humidifier is used to add moisture to the air in a room to make
+it more comfortable. A steam humidifier heats water until it boils to
+humidify the air. How much power is required for the humidifier to
+take 1883 g of water per hour at 19 C and boil all of it to vapour?
+The molar mass of water is 18.015 g/mol, the enthalpy of fusion is
+6.01 kJ/mol, the enthalpy of vaporization is 40.7 kJ/mol, and the
+molar heat capacity of the gas, liquid, and solid are 36.4 J/mol*K,
+75.3 J/mol*K, and 37.7 J/mol*K, respectively. Note that 1 W = 1
+J/s.
+(a) 1223 W
+(b) 1359 W
+(c) 1005 W
+(d) 178 W",Original,Hard,b,4
+"An unknown polymer sample is heated and observed to not melt
+before burning. Which of the following are possible microstructures
+for this polymer?
+A. Highly branched
+B. Highly cross-linked
+C. Linear
+D. Network
+(a) B and C.
+(b) B and D.
+(c) B only.
+(d) C and D.",Original,Medium,b,4
+"In the iron carbon system, the maximum solid solubility of carbon in
+ferrite occurs at 0.022 wt%C and 727 C, the eutectoid composition
+is 0.76 wt%C, the eutectoid temperature is 727 C and the cementite
+composition is 6.7 wt%C. For a 4232 g sample of 1.2 wt%C steel at
+726 C, determine the mass of ferrite present.
+(a) 2354 g
+(b) 747 g
+(c) 3485 g
+(d) 1878 g",Original,Hard,c,4
+"Covalently bonded materials are necessarily electrical insulators?
+(a) False.
+(b) True.",Original,Easy,a ,2
+"Introducing significant cross-links to a a sample of a hydrocarbon
+polymer would most likely cause which of the following changes?
+
+(a) Decrease in the yield strength and resistance to chemical disso-
+lution
+
+(b) Decrease in the elastic constant.
+(c) No changes would be expected.
+(d) Increase in yield strength and resistance to chemical dissolution.",Original,Medium,d,4
+"The intrinsic carrier concentration of a hypothetical compound semi-
+conductor at room temperature is 1.70e+12 1/m3 and the electron an hole mobilities are 0.7 m2/V*s
+and 0.18 m2/V*s, respectively. Determine the intrinsic conductivity of this semiconductor at room temperature.
+(a) 1.50e+12 1/Ohm*m
+(b) 1.91e-07 1/Ohm*m
+(c) 2.40e-07 1/Ohm*m
+(d) 4.91e+30 1/Ohm*m",Original,Hard,c,4
+"Which of the following is most likely to be correct when comparing
+the density for samples of polyethylene?
+(a) Highly crystalline ? low crystallinity, high molecular weight ? low molecular weight...
+(b) Highly crystalline ? low crystallinity, high molecular weight > low molecular weight.
+(c) Highly crystalline > low crystallinity, high molecular weight > low molecular weight.
+(d) Highly crystalline > low crystallinity, high molecular weight ? low molecular weight.",Original,Hard,d,4
+"The maximum solid solubility of carbon in ferrite occurs at
+0.022 wt% C and 727 C, the eutectoid composition is 0.76 wt% C, the
+maximum solid solubility of carbon in austenite occurs at 2.14 wt% C
+and 1147 C, and the cementite composition is 6.7 wt% C. For 2122 g
+of a 3.2134 wt% C steel at 726 C, what will be the mass of carbon
+present as part of a compound?
+(a) 67.9 g
+(b) 74.2 g
+(c) 58.7 g
+(d) 83.5 g",Original,Hard,a,4
+"A non-metallic material has a bandgap of 2.1 eV. In terms of the
+wavelengths of light that passes though the material, which of the
+following is true?
+(a) The material passes only light with wavelengths shorter than
+532 nm.
+(b) The material passes only light with wavelengths between 532 nm
+and 650 nm
+(c) The material passes only light with wavelengths longer than
+591 nm.
+
+(d) The material passes all light except that with wavelengths be-
+tween 532 nm and 650 nm",Original,Easy,c,4
+"An hypothetical FCC metal has a density of 7.4 g/cm3 and a molar mass of 55.3 g/mol. Which of the following is the correct number of atom sites (that is, without any vacancies)?
+(a) 1.09e+22 atoms/cm3
+(b) 1.34e-01 atoms/cm3
+(c) 6.80e-22 atoms/cm3
+(d) 8.06e+22 atoms/cm3",Original,Medium,d,4
+"You are to choose the best material for use as a load bearing hinge
+surface. Without knowing anything else, how would you rank the
+following polymers from most appropriate to least appropriate for
+producing these moulds?
+A. Low molecular weight highly branched polyethylene
+B. High molecular weight and lightly branched polyethylene
+C. Ultrahigh molecular weight and highly branched polyethylene
+D. Ultrahigh molecular weight and lightly branched polyethylene
+(a) D, C, B, A
+(b) B, C, D, A
+(c) D, B, C, A
+(d) B, C, A, D",Original,Medium,a,4
+"Copper and nickel are completely soluble in one another. This can
+best be explained by which of the following points?
+A. Cu and Ni have similar atomic radii.
+B. Cu and Ni have similar electronegativity.
+C. Cu and Ni have the same crystal structure.
+D. Cu and Ni have nearly identical melting temperatures.
+(a) A, B and C.
+(b) A, B and D.
+(c) A, C and D.
+(d) B, C and D.",Original,Medium,a,4
+"Two 1 m lengths of a woven polypropylene rope having a glass transition temperature of -20 C are loaded in tension for 8 months. Sample 1 is loaded at 25 C and sample 2 is loaded at 90 C. A third sample, 3 is left unloaded, while a fourth sample, 4 is loaded in tension at -45 C. Comparing the lengths of these rope samples at the end of this 8 month period, which of the following are possible?
+A. 1 > 2 > (3 = 4)
+B. 2 > 1 > (3 = 4)
+C. 2 > 1 > (3 > 4)
+D. 1 > 2 > (4 > 3)
+(a) A and C.
+(b) B only.
+(c) C and B.
+(d) A only.",Original,Hard,b,4
+"An hypothetical ceramic has a crystal structure in which only half of the interstitial sites are occupied and the cations occupy simple cubic interstitial sites. The anion and cation radii are 0.18 nm and 0.145 nm, respectively. The anion and cation molar masses are 28.57 g/mol and 34.4 g/mol, respectively. Which of the following is the theoretical density of this ceramic?
+(a) 1.98 g/cm3 .
+(b) 7.91 g/cm3 .
+(c) 0.25 g/cm3 .
+(d) 0.99 g/cm3 .",Original,Medium,d,4
+"Intramolecular bonds within a sample of a hydrocarbon polymer are
+which of the following types of bonds?
+(a) Ionic.
+(b) Covalent.
+(c) van der Waals.
+(d) Metallic.",Original,Easy,b,4
+"Which of the following is the best description of the basis for metallic
+strengthening mechanisms?
+(a) Crystalline imperfections are removed thereby inhibiting the
+movement of linear crystalline imperfections.
+
+(b) Crystalline imperfections are introduced that inhibit the move-
+ment of linear crystalline imperfections.
+
+(c) Flaws at the surface of materials as well as internal pores are
+reduced thereby reducing the likelyhood of a material cracking.
+(d) The density of linear crystalline imperfections are reduced
+
+thereby inhibiting the movement of other linear crystalline im-
+perfections.",Original,Easy,b,4
+"In the iron carbon system, the maximum solid solubility of carbon in
+ferrite occurs at 0.022 wt%C and 727 C, the eutectoid composition
+is 0.76 wt%C, the eutectoid temperature is 727 C and the cementite
+composition is 6.7 wt%C. For a 652 g sample of 0.5118 wt%C steel
+at 728 C, determine the mass of austenite present.
+(a) 151 g
+(b) 433 g
+(c) 219 g
+(d) 501 g",Original,Hard,b,4
+"Which of the following is the best explanation for the continued load
+bearing following necking that can be observed in some thermoplastic
+polymers?
+(a) Chain orientation within the locally deformed region increases
+the polymer strength beyond the strength of the regions adja-
+cent to the neck.
+(b) Localized deformation in the neck increases the defect popula-
+tion, specifically vacancies, which limit dislocation movement
+and strengthen the polymer within the neck significantly more
+that the strength of the regions adjacent to the neck.
+(c) Plastic deformation results in broken covalent bonds which then
+re-form as cross-links thereby increasing the polymer strength
+beyond the strength of the regions adjacent to the neck.
+(d) Grain refinement within the necked region increases the strength
+through grain size reduction significantly more than the
+strength of the regions adjacent to the neck.",Original,Medium,a,4
+"A rectangular cross-section tensile specimen is loaded by a tensile
+load of 143680 N. The unloaded gauge length is 573 mm, and the
+width and thickness of the reduced section are 12 mm and 6 mm,
+respectively, and the length of the reduced section is 600 mm. Under
+this load the guage length elongates elastically by 24 mm. Which of
+the following is the correct Young's modulus for this material?
+(a) 0.0 GPa
+(b) 95287.8 GPa
+(c) 47.6 GPa
+(d) 49.9 GPa",Original,Hard,c,4
+"Which of the following is the correct coordination number for the
+octahedral interstitial sites within the HCP crystal structure?
+(a) 12
+(b) 4
+(c) 6
+(d) 8",Original,Easy,c,4
+"An hypothetical metal having the BCC crystal structure is being
+studied. What is the coordination number of an atom at the surface
+of an exposed close-packed plane?
+(a) There are no close-packed planes within BCC
+(b) 8
+(c) 7
+(d) 6",Original,Easy,a,4
+"A rectangular cross-section ceramic beam is loaded in 3-point bending
+by a force of 19.203 kN, resulting in a peak stress on the lower surface
+of the beam of 145 MPa. The beam has a width of 118 mm and a
+thickness of 35 mm. Which of the following is the span of this beam?
+(a) 727.655 m
+(b) 1637.225 m
+(c) 2453.238 m
+(d) 1091.483 m",Original,Hard,a,4
+"An hypothetical ceramic having the rock salt crystal structure is being
+studied. A close-packed plane of anions is exposed along a surface.
+What is the ratio of cations having centres residing on this plane to
+anions having centres residing on this plane?
+(a) 0.5
+(b) 0
+(c) 2
+(d) 1",Original,Medium,b,4
+"Which general class of material has a Young's modulus that is roughly
+one hundred times less than that of the metals?
+(a) Polymers
+(b) None of these
+(c) Ceramics
+(d) Composites",Original,Easy,a,4
+"An hypothetical metal having the HCP crystal structure is being
+studied. What is the coordination number of an atom at the surface
+of an exposed close-packed plane?
+(a) Eleven
+(b) Nine
+(c) Five
+(d) Twelve",Original,Medium,b,4
+"The temperature of a sample of an HCP metal is changed, resulting
+in a transformation of the crystal structure to FCC. Which of the
+following is the volume change that accompanies this phase change?
+(a) 9% increase in volume
+(b) No change
+(c) 6% increase in volume
+(d) 6% decrease in volume",Original,Medium,b,4
+"A cylindrical cross-section rod is loaded along its long axis with a
+tensile load of 7276.617 N. The rod has an initial length of 389 cm,
+a radius of 21 cm and is made from a hypothetical metal having a
+Young's modulus of 178 GPa. Which of the following is the correct
+elongation for these conditions, assuming only elastic deformation?
+(a) 1.148 mm
+(b) 0.0 m
+(c) 0.001 mm
+(d) 11.484 mm",Original,Hard,c,4
+"Two identically sized panels of glass are produced, one thermally
+tempered and one chemically tempered. The ion replacement process
+in the chemically tempered glass results in three times the residual
+
+compressive stresses on the outer surfaces compared with the ther-
+mally tempered glass. If the thermally tempered glass has a bending
+
+strength of 100 MPa, which of the following is most likely to be close
+to the bending strength of the chemically tempered glass?
+(a) 300 MPa
+(b) 30 MPa
+(c) 10 MPa
+(d) 100 MPa",Original,Medium,a,4
+"A rectangular cross-section tensile specimen is loaded by a tensile load
+of 91290 N. The unloaded gauge length is 560 mm, and the width and
+thickness of the reduced section are 9 mm and 1 mm, respectively,
+and the length of the reduced section is 583 mm. Under this load the
+guage length elongates elastically by 46 mm. Which of the following
+is the correct Young's modulus for this material?
+(a) 123.5 GPa
+(b) 128.6 GPa
+(c) 0.0 GPa
+(d) 1111356.5 GPa",Original,Hard,a,4
+"Which general class of material has a density that is roughly the same
+as water?
+(a) Polymers
+(b) Composites
+(c) None of these
+(d) Ceramics",Original,Easy,a,4
+"A rectangular bar spans a length 69 m, and has a height 62 m, and
+width 50 m. A 505 N load is applied on the top surface at the midspan.
+
+Which of the following is the load bearing cross-sectional area sup-
+porting a tensile load?
+
+(a) None of these.
+(b) 213900 m2
+(c) 181 m2
+(d) -57 m2",Original,Medium,a,4
+"An hypothetical metal has an atomic radius of 123 nm and has the
+FCC crystal structure. Which of the following is the correct value for
+the lattice parameter?
+(a) 3.5*10^-7  m
+(b) 2.8*10^-7 m
+(c) 2.5*10^-7 m
+(d) None of these options.",Original,Medium,a,4
+"An hypothetical metal has an atomic radius of 323 nm and has the
+HCP crystal structure with c/a = 1.624. Which of the following is the
+correct value for the interplanar spacing between close-packed planes?
+(a) 5.25*10^-7  m
+(b) 1.05*10^-6  m
+(c) 1.62*10^-7 m
+(d) None of these options.",Original,Medium,a,4
+"Which of the following is the approximate fraction of the FCC (111)
+plane that is covered by atoms, in the hard sphere model, with centres
+on the plane? We could define this as the area packing fraction or
+the planar packing fraction
+PPF = (Area of Atoms)/(Area of Plane)?
+(a) 0.91
+(b) 0.79
+(c) 0.83
+(d) None of these options.",Original,Medium,a ,4
+"You will also know from high school that integrating force through
+distance gives energy. With this in mind, which of the following is
+true of the Young's modulus?
+(a) Directly proportional to the second derivative of the interatomic energy versus separation curve at equilibrium interatomic spacing.
+(b) Directly proportional to the derivative of the interatomic energy
+versus separation curve at equilibrium interatomic spacing.
+(c) Directly proportional to the integral of the interatomic energy versus separation curve from R = 0 to the equilibrium inter-
+atomic spacing.
+(d) None of these options.",Original,Easy,a,4
+"Determine the approximate fraction of the plane that is covered by
+atoms in the hard sphere model, with centres on the plane, for the
+FCC (001), FCC (111) and BCC (011) planes. We could define this
+as the area packing fraction or the planar packing fraction
+PPF = (Area of Atoms)/(Area of Plane).
+Which of the following is the correct order of these planar packing
+fractions from highest to lowest ?
+(a) FCC (111), BCC (011), FCC (001)
+(b) FCC (111), FCC (001), BCC (011)
+(c) FCC (001), FCC (111), BCC (011)
+(d) None of these options.",Original,Medium,a,4
+"A sample of niobium, which has the BCC crystal structure, is ana-
+lyzed in an x-ray diffractometer with an x-ray source having a wave-
+length of 0.1659 nm and a peak is identified for first order reflection from the (211) set of planes at a 2theta angle of 75.99 degree. Determine the
+interplanar spacing for this set of planes.
+(a) 0.135 nm
+(b) 8.55*10^-2 nm
+(c) 0.270 nm
+(d) None of these options.",Original,Medium,a,4
+"A square cross-section bar of an hypothetical metal alloy is loaded
+along its long axis by a load of 1250 N and the length of one of the
+short edges is found to reduce by 1.9*10^-7 metre. If the Young's
+modulus of this alloy is known to be 115 GPa and the bar has an
+initial length of 1 metre and an initial cross-sectional edge length of
+10 mm, determine the Poisson's ratio of this alloy.
+(a) 0.17
+(b) 0.33
+(c) 0.31
+(d) None of these options.",Original,Medium,a,4
+"A 2.8 metre cylindrical steel tensile tie must support a load of 32 kN
+along its long axis without elongating beyond 1 cm. Taking a Young's
+modulus for this steel of 210 GPa determine the minimum diameter
+permissible for this tie.
+(a) 7.4 mm
+(b) 3.5 mm
+(c) 13 mm
+(d) None of these options.",Original,Medium,a,4
+"You have three identically sized samples of glass: one is conventional
+un-tempered plate glass, another is thermally tempered glass, and
+the final is chemically tempered glass. Assuming that the thermally
+tempered glass is twenty times stronger in bending than the plate
+glass and the chemically tempered glass is 20% stronger in bending
+than the thermally tempered glass and you fracture each piece of glass
+with the same impact energy which of the following would you expect
+to correctly reflect the order of the number of pieces that the glass
+breaks into, from smallest number to largest number?
+(a) Plate, thermally tempered, chemically tempered
+(b) Thermally tempered, chemically tempered, plate
+(c) Plate, chemically tempered, thermally tempered
+(d) None of these options.",Original,Easy,a,4
+"A tensile specimen is loaded until necking and then held at that load.
+The loaded length is measured and a strain is calculated. Which of
+the following is the best description of this measured strain?
+(a) Both plastic strain and elastic strain
+(b) Elastic strain
+(c) Plastic strain
+(d) None of these options.",Original,Easy,a,4
+"A tensile specimen is loaded until necking and then immediately un-
+loaded to zero load. The final unloaded length is measured and a strain is calculated. Which of the following is the best description of
+this measured strain?
+(a) Plastic strain
+(b) Elastic strain
+(c) Both plastic and elastic strain
+(d) None of these options.",Original,Easy,a,4
+"A tensile specimen is loaded until just before necking and then loading
+is stopped without unloading. The length of the sample is measured
+
+and a strain is calculated. Which of the following is the best descrip-
+tion of the types of strain contributing to the total measured strain?
+
+(a) Linear elastic, uniform plastic
+(b) Uniform elastic, non-uniform elastic, uniform plastic
+(c) Linear elastic, uniform plastic, localized plastic
+(d) None of these options.",Original,Medium,a,4
+"A tensile specimen is loaded beyond necking, but not to fracture
+and then is unloaded to zero stress. The length of the sample is
+measured and a strain is calculated. Which of the following is the best
+description of the types of strain contributing to the total measured
+strain?
+(a) Uniform plastic, localized plastic
+(b) Linear elastic, uniform plastic, localized plastic
+(c) Linear elastic, uniform plastic
+(d) None of these options.",Original,Medium,a,4
+"A tensile specimen is loaded until just before fracture and then loading
+is stopped without unloading. The length of the sample is measured
+
+and a strain is calculated. Which of the following is the best descrip-
+tion of the types of strain contributing to this measured strain?
+
+(a) Linear elastic, uniform plastic, non-uniform plastic
+(b) Linear elastic, uniform plastic
+(c) Uniform plastic, localized plastic
+(d) None of these options.",Original,Medium,a,4
+"A very important brass tensile specimen is accidentally dropped caus-
+ing plastic deformation within the reduced section. The sample is
+
+carefully straightened back out, a tensile test is performed and sev-
+eral material properties are determined. Which of the following ma-
+terial properties would you expect to be unaffected by the accidental
+
+dropping?
+(a) Young's modulus
+(b) Yield strength, Young's modulus
+(c) Yield strength
+(d) None of these options.",Original,Easy,a,4
+"A lattice of cations, each coordinated with four nearest neighbour an-
+ions in a tetrahedral arrangement is formed with cations positioned in face-centred-type positions. What crystal structure is best described
+here?
+(a) ZnS
+(b) NaCl
+(c) CaF2
+(d) None of these options.",Original,Easy,a,4
+"Which of the following is the best explanation of the engineering stress?
+a) The applied force divided by the initial cross-sectional area
+b) The applied force divided by the instantaneous cross-sectional area
+c) The applied force divided by the cross-sectional area within the necked
+region
+d) None of the above",Original,Easy,a,4
+"Regarding a standard tensile specimen, which of the following statements is true?
+a) The gauge length is normally longer than the reduced section, but the
+reduced section is never longer than the gauge length
+b) The gauge length is normally less than the reduced section, but the
+reduced section is never less than the gauge length
+c) The reduced section and the gauge length are normally equal
+d) None of the above",Original,Easy,b,4
+"Which of the following would be expected to cause a change in the elastic
+modulus?
+a) An increase in the impurity concentration in a metal
+b) An increase in the dislocation density of a metal
+c) A reduction in the grain size of a metal
+d) An increase in crystallinity of a polymer",Original,Easy,d,4
+"Which of the following is closest to the atomic scale?
+
+a) 10^-14 m
+b) 10^-6 m
+c) 10^-10 m
+d) 10^-23 m",Original,Easy,c,4
+"How many atoms are present within a single unit cell of the diamond cubic crystal
+structure?
+a) 4
+b) 5
+c) 6
+d) 8",Original,Easy,d,4
+"Which of the following is the most accurate description of the direction that atoms
+within the BCC crystal structure touch one another?
+a) Along the face diagonals
+b) Along the cube diagonals
+c) Along the cube edges
+d) None of the above",Original,Easy,b,4
+"Which of the following best describes the stacking sequence of close-packed
+planes within the HCP crystal structure?
+a) There are no close-packed planes in HCP
+b) ABCABC
+c) ABAB
+d) None of the above",Original,Easy,c,4
+"At higher temperatures stress relaxation would occur more rapidly.
+
+a) False
+b) True",Original,Easy,b,2
+"A polymer that exhibits a very subtle (small) change in relaxation modulus around
+the glass-transition temperature would most likely have which of the following
+microstructures?
+a) Fully amorphous
+b) Cross-linked
+c) Highly crystalline
+d) None of the above",Original,Easy,c,4
+"A reaction with a positive enthalpy change and a positive entropy change will be
+spontaneous under which of the following conditions?
+a) At low temperature
+b) At high temperature
+c) At all temperatures
+d) Never",Original,Easy,b,4
+"Which of the following statements is/are correct?
+1. The atomic packing factor of the hexagonal close packed crystal
+structure is greater than that of the face centred cubic crystal
+structure.
+2. The simple cubic interstitial site is larger than the tetrahedral
+interstitial site.
+3. The hexagonal close packed crystal structure has only two nonparallel close packed planes, while the face centred cubic crystal
+structure has four non-parallel close packed planes.
+4. The coordination number of atoms within the face centred cubic
+crystal structure is 12.
+(a) Second and fourth.
+(b) First and third.
+(c) Second and third.
+(d) First and fourth.
+(e) None of these options are correct.",Original,Hard,a,5
+"Which of the following statements is/are correct?
+1. A theoretical system of particles at infinite temperature would
+have all particles existing in the highest possible energy states.
+2. A grain boundary is a type of two-dimensional crystalline imperfection.
+3. Decreasing the grain size of a metal would generally be expected
+to result in an increase in the yield strength of that metal.
+4. The octahedral interstitial site is smaller than the tetrahedral
+interstitial site.
+(a) None of these options are correct.
+(b) First and second.
+(c) Third and fourth.
+(d) Second and third.
+(e) First and fourth.",Original,Hard,d,5
+"Which of the following statements is/are correct?
+1. A theoretical (non-degenerate) system at absolute zero of temperature would have all particles existing in the lowest possible
+energy states.
+2. The vacancy population in a metal will decrease with increasing
+temperature.
+3. Increasing the dislocation density in a metal through plastic
+deformation will increase the yield strength of the metal.
+4. A dislocation is a type of zero-dimensional crystalline imperfection.
+(a) Second and fourth.
+(b) Second and third.
+(c) First and fourth.
+(d) None of these options are correct.
+(e) First and third.",Original,Hard,e,5
+"A cylindrical sample of stainless steel having a Young's modulus of
+204.3 GPa, a diameter of 12.0 mm, and initial length of 237.8 mm
+is loaded to a stress of 411.5 MPa. The sample is then completely
+unloaded. What will the elastic recovery of this sample be, in mm?
+The yield strength and ultimate tensile strength of this specific alloy
+are 292.0 MPa and 688.0 MPa, respectively.
+(a) Possible to calculate from information provided, but none of
+these options are correct.
+(b) 0.96
+(c) Not possible to calculate from information provided.
+(d) 239.0
+(e) 0.24
+(f) 0.48",Original,Hard,f,6
+"A cylindrical sample of stainless steel having a Young's modulus
+of 202.2 GPa, and a diameter of 10.9 mm, is loaded to a stress of
+498.6 MPa. The sample is then completely unloaded and is observed
+to recover elastically by 0.89 mm. What was the initial length of
+this sample, before loading, in mm? The yield strength and ultimate
+tensile strength of this specific alloy are 284.0 MPa and 666.0 MPa,
+respectively.
+(a) Possible to calculate from information provided, but none of
+these options are correct.
+(b) 180.0
+(c) 361.0
+(d) Not possible to calculate from information provided.
+(e) 722.0
+(f) 7219.0",Original,Hard,c,6
+"Which of the following statements is/are correct?
+1. The tetrahedral interstitial site has a coordination number of 4.
+2. The octahedral interstitial site has a coordination number of 8.
+3. Cations within the rock salt crystal structure occupy octahedral
+interstitial sites.
+4. Atoms within the hexagonal close packed crystal structure have
+a coordination number of 4.
+(a) First and third.
+(b) First and fourth.
+(c) Second and third.
+(d) Second and fourth.
+(e) None of these options are correct.",Original,Hard,a,5
+"Which of the following statements is/are correct?
+1. Increasing the extent of cross-linking within a polymer would
+generally be expected to decrease the strength of that polymer.
+2. Decreasing the molecular weight of a polymer will generally
+result in an increase in the strength of that polymer.
+3. Decreasing the crystallinity of a polymer would generally be
+expected to increase the density of that polymer.
+4. A polymer having a very broad distribution of molecular weights
+would be generally expected to have a higher strength than another polymer having a higher number average molecular weight
+and a tighter distribution of molecular weights.
+(a) Second and third.
+(b) Second and fourth.
+(c) None of these options are correct.
+(d) First and third.
+(e) First and second.",Original,Hard,c,5
+"A cylindrical sample of stainless steel having a Young's modulus of
+204.3 GPa, a diameter of 12.0 mm, and initial length of 237.8 mm
+is loaded to a stress of 411.5 MPa. The sample is then completely
+unloaded. What will the final length of the sample be, upon unloading, in mm? The yield strength and ultimate tensile strength of this
+specific alloy are 292.0 MPa and 688.0 MPa, respectively.
+(a) Not possible to calculate from information provided.
+(b) 0.48
+(c) 0.24
+(d) Possible to calculate from information provided, but none of
+these options are correct.
+(e) 0.96
+(f) 239.0",Original,Hard,a,6
+"Which of the following statements is/are correct?
+1. The large fluorine atoms within PTFE act to protect the covalent backbone of the molecule and make PTFE generally unreactive with other materials.
+2. The polar side groups within PVC create stronger intermolecular forces and contribute to the higher service temperature of
+PVC.
+3. The thermal energy within a polymer near room temperature is
+comparable to the intermolecular bonding energy and therefore
+the strength of a polymer tends to change significantly with
+small chagnes in temperature near room temperature.
+4. The glass transition temperature of a polymer corresponds to
+the temperature when the thermal energy is sufficient to overcome the intermolecular bonds within the amourphous regions
+of a polymer.
+(a) Second, third and fourth.
+(b) None of these options are correct.
+(c) All of these options are correct.
+(d) First, third and fourth.
+(e) First, second and third.",Original,Hard,c,5
+"A cylindrical sample of stainless steel having a Young's modulus of
+193.8 GPa, a diameter of 17.4 mm, and an initial length of 147.2is
+loaded to a stress between the yield strength and the ultimate tensile strength and then completely unloaded. The change in length
+from the loaded length to the final unloaded length is measured to be
+0.33 mm. What was the force that this sample was loaded to? The
+yield strength and ultimate tensile strength of this specific alloy are
+284.0 MPa and 676.0 MPa, respectively.
+(a) 413.0 kN
+(b) Possible to calculate from information provided, but none of
+these options are correct.
+(c) Not possible to calculate from information provided.
+(d) 103.3 kN
+(e) 59.0 kN
+(f) 5.2 MN",Original,Hard,d,6

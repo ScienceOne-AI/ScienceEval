@@ -1,0 +1,10 @@
+aiohttp
+tqdm
+human-eval
+qiskit
+qiskit_ibm_runtime
+matplotlib
+qiskit_aer
+networkx
+qiskit_ibm_transpiler
+jsonlines

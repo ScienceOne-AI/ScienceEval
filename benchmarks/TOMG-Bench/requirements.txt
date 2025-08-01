@@ -1,0 +1,6 @@
+numpy==2.3.1
+openai==1.95.0
+pandas==2.3.1
+rdkit==2025.3.2
+selfies==2.2.0
+tqdm==4.67.1
