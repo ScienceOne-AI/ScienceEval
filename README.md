@@ -136,8 +136,8 @@ This will run the benchmark tasks sequentially. For each task:
 * Logs are saved under the `logs` subdirectory within each benchmark folder
 * Compute scores and save results to `evaluation.json` and `score.json`
 
-> ⚠️ Only OpenAI-compatible API endpoints are supported for both the test model and the judge model.
-> 🌐 Internet access to the Hugging Face Datasets Hub is required for ChemBench to download benchmark data on first run.
+> * ⚠️ Only OpenAI-compatible API endpoints are supported for both the test model and the judge model.
+> * 🌐 Internet access to the Hugging Face Datasets Hub is required for ChemBench to download benchmark data on first run.
 
 #### Evaluation Arguments
 
