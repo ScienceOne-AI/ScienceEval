@@ -1,17 +1,3 @@
-#!/bin/bash
-source ~/.bashrc
-
-# === 显式加载 Conda ===
-CONDA_INIT="/nfs-13/wuxiaoyu/miniforge3/etc/profile.d/conda.sh"  # 修改为你的实际路径
-[ -f "$CONDA_INIT" ] && source "$CONDA_INIT"
-
-# === 激活环境 ===
-conda deactivate 2>/dev/null || true
-if ! conda activate TOMG-bench; then
-    echo "错误: 无法激活 TOMG-bench 环境"
-    exit 1
-fi
-
 name=$1
 output_dir=$2
 new_model_name=$3
@@ -69,4 +55,3 @@ run_evaluation() {
 
 # 调用评估函数，传入新模型名称和输出目录
 run_evaluation "$new_model_name" "$output_dir"
-# bash eval_cal.sh S1 ./outputs/ TOMG-bench_S1_20250717-102522
