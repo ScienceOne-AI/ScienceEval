@@ -2,6 +2,13 @@
 
 > An open-source evaluation suite designed for the ScienceOne Base models. The project is actively maintained, and we welcome community contributions.
 
+<p align="center">
+<font size=5>📘</font>
+<a target="_self" href="./README_ZH.md">
+<img style="height:12pt" src="https://img.shields.io/badge/-Chinese%20README-blue?style=flat">
+</a>
+</p>
+
 ## 📚 Table of Contents
 
 - [ScienceEval](#scienceeval)
