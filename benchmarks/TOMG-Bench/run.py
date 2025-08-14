@@ -471,7 +471,7 @@ def main():
     parser.add_argument("--timeout", type=int, default=3600, help="调用超时时间")
     
     parser.add_argument("--is_merge_files_with_keywords", type=bool, default=True, help="是否合并获得evaluation.jsonl文件") 
-    parser.add_argument("--is_delete_files_with_keywords", type=bool, default=True, help="是否删除中间结果文件") 
+    parser.add_argument("--is_delete_files_with_keywords", type=bool, default=False, help="是否删除中间结果文件") 
     args = parser.parse_args()
 
     api_key = args.api_key

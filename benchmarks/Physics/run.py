@@ -19,7 +19,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 input_jsonl_list = [
                     "atomic_dataset_textonly",
                     "mechanics_dataset_textonly",
-                    "optics_dataset_textonly",
+                     "optics_dataset_textonly",
                     "quantum_dataset_textonly", 
                     "statistics_dataset_textonly", 
                     "electro_dataset_textonly"
@@ -223,17 +223,8 @@ if __name__ == "__main__":
     success = 0
     aacc = 0
     evaluation = []
-    input_jsonl_list = [
-                    "atomic_dataset_textonly",
-                    "mechanics_dataset_textonly",
-                    "optics_dataset_textonly",
-                    "quantum_dataset_textonly", 
-                    "statistics_dataset_textonly", 
-                    "electro_dataset_textonly"
-                    ]
-    
+
     for dataset_folder in input_jsonl_list:
-        
         output_dir = os.path.join(base_output_dir, dataset_folder)
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
@@ -241,7 +232,6 @@ if __name__ == "__main__":
         input_file = os.path.join('./text_only_dataset', dataset_folder+'.jsonl')
         main(input_file,output_file)
         eval_main(os.path.join(base_output_dir, dataset_folder), args.judge_api_url, args.judge_api_key, args.judge_model)
-    
         result_file = os.path.join(base_output_dir, dataset_folder) + '/final_evaluation.jsonl'
         csv_file = os.path.join(base_output_dir, dataset_folder) + '/accuracy.csv'
 

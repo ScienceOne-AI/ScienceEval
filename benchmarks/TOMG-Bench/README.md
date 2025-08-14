@@ -112,7 +112,7 @@ This will:
 * `bbox_check` *(bool, default: True)*
   Whether to extract answers from the \boxed{} format.
 * `is_delete_files_with_keywords` *(bool, default: False)*
-  Whether to delete intermediate result files. Note: If set to True, all intermediate result files will be deleted. For resumable evaluation, you must specify the folder in evaluation_save_dir.
+  Whether to delete intermediate result files. Note: If set to True, all intermediate result files will be deleted, making it impossible to recompute or resume testing.
 * `--evaluation_save_dir` *(str, default: None)*
   Directory for saving/loading results (supports resumable evaluation).
 * `--output_dir` *(str, default: "outputs")*
@@ -124,7 +124,7 @@ All evaluation results are saved under `outputs/`:
 
 ```
 .
-├── Qwen3-8B  # Intermediate result files. When this folder exists, you do not need to specify evaluation_save_dir for resumable evaluation. 
+├── Qwen3-8B  # Intermediate result files. When this folder exists, you do not need to specify evaluation_save_dir for resumable evaluation.
 │   └── ...
 ├── TOMG-bench_Qwen3-8B_20250728-172804
 │   ├── evaluation.json           # Aggregated evaluation records for each question

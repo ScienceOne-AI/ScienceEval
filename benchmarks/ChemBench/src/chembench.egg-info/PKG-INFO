@@ -1,0 +1,120 @@
+Metadata-Version: 2.4
+Name: chembench
+Version: 0.3.0
+Summary: Benchmark chemistry performance of LLMs
+Author-email: ChemBench authors <chembench@lamalab.org>
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tenacity==8.3.0
+Requires-Dist: langchain>=0.1.5
+Requires-Dist: fastcore>=1.5.29
+Requires-Dist: scikit-learn>=1.4.0
+Requires-Dist: loguru>=0.7.2
+Requires-Dist: litellm>=1.59.1
+Requires-Dist: backoff>=2.2.1
+Requires-Dist: tqdm>=4.66.1
+Requires-Dist: pint>=0.23
+Requires-Dist: pandas>=2.2.0
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: fire>=0.5.0
+Requires-Dist: langchain-groq>=0.1.9
+Requires-Dist: langchain-anthropic>=0.1.22
+Requires-Dist: datasets
+Requires-Dist: torch
+Requires-Dist: transformers
+Requires-Dist: langchain-community>=0.0.17
+Requires-Dist: pillow
+Provides-Extra: all
+Requires-Dist: chembench[dev,docs,models,visualization]; extra == "all"
+Provides-Extra: agents
+Requires-Dist: arxiv; extra == "agents"
+Requires-Dist: PubChemPy; extra == "agents"
+Requires-Dist: wikipedia; extra == "agents"
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: pytest-dotenv; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: mkdocs; extra == "docs"
+Requires-Dist: mkdocs-material; extra == "docs"
+Requires-Dist: mkdocstrings[python]; extra == "docs"
+Provides-Extra: visualization
+Requires-Dist: matplotlib>=3.8.2; extra == "visualization"
+Requires-Dist: plotly>=5.18.0; extra == "visualization"
+Requires-Dist: nomic>=1.0.0; extra == "visualization"
+Provides-Extra: models
+Requires-Dist: cohere>=4.45; extra == "models"
+Requires-Dist: openai>=1.11.1; extra == "models"
+Requires-Dist: anthropic>=0.15.0; extra == "models"
+Requires-Dist: langchain-google-genai>=0.0.6; extra == "models"
+Requires-Dist: wolframalpha>=5.0.0; extra == "models"
+Requires-Dist: langchain-cohere>=0.2.0; extra == "models"
+Requires-Dist: langchain-anthropic>=0.1.22; extra == "models"
+Requires-Dist: torch>=2.4.0; extra == "models"
+Requires-Dist: duckduckgo-search>=4.2; extra == "models"
+Requires-Dist: langchainhub>=0.1.14; extra == "models"
+Requires-Dist: langchain-experimental>=0.0.50; extra == "models"
+Requires-Dist: accelerate>=0.26.1; extra == "models"
+Requires-Dist: langchain_openai; extra == "models"
+Dynamic: license-file
+
+# ChemBench 评测说明
+
+## 环境依赖
+
+建议使用 Conda 创建虚拟环境并安装依赖：
+
+```bash
+conda create -n chembench python=3.10
+conda activate chembench
+pip install -e .
+```
+
+## 评测启动
+
+### 参数说明
+
+| 参数名           | 含义                         |
+|------------------|------------------------------|
+| api_url          | 待评测模型的接口地址         |
+| api_key          | 待评测模型的 key             |
+| model            | 模型名称                     |
+| num_workers      | 并发数量                     |
+| max_tokens       | 回答的最大长度     |
+| temperature      | 控制输出随机性                   |
+| top_p            | 候选词累计概率阈值           |
+| presence_penalty | 惩罚已出现过的词             |
+| timeout          | 接口调用超时时间             |
+
+### 示例命令
+
+使用以下命令启动评测脚本：
+
+```bash
+python -u run.py \
+  --api_url "http://API_HOST:PORT/v1" \
+  --api_key "API_KEY" \
+  --model "MODEL_NAME" \
+  --num_workers 64 \
+  --max_tokens 32768 \
+  --temperature 0.6 \
+  --top_p 0.95 \
+  --presence_penalty 0.0 \
+  --timeout 3600
+```
+
+请根据实际情况替换参数中的 `API_HOST:PORT`、`API_KEY` 和 `MODEL_NAME`。
+
+此外，`API_KEY` 同样支持通过环境变量方式传递，例如：
+```bash
+export API_KEY="EMPTY"
+```
+> 如果通过环境变量传递 `API_KEY`，启动命令中不要加 `--api_key` 参数，否则会被覆盖。
+
+## 输出结果说明
+
+- `evaluation.json`：包含本次评测每一条数据的模型回答、参考答案、是否正确等信息。
+- `score.json`：包含本次评测的基础配置、模型参数、整体及分任务得分、有效生成数量等信息。
