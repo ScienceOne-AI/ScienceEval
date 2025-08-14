@@ -14,7 +14,7 @@ from chembench.constant import (
     CONFIDENCE_SCORE_ESTIMATE_2,
     COT_PROMPT,
     FLOATQ_REGEX_TEMPLATE_1,
-    INSTRUCT_TEMPLATE_1,
+    INSTRUCT_TEMPLATE_1, 
     INSTRUCT_TEMPLATE_2,
     MCQ_REGEX_TEMPLATE_1,
     MCQ_REGEX_TEMPLATE_2,
@@ -889,8 +889,10 @@ def prepare_mcq_answer(
             response = llm_extractor.extract(prompt2messages([text]), mcq=True, example=example)
             if response is None:
                 return ""
-            extracted = response["content"]
-            return ", ".join(extracted)
+            
+            extracted = response["content"] #报错'NoneType' object is not subscriptable
+            return ", ".join(extracted) 
+            
         else:
             if text in alphabet:
                 logger.debug(f"Returning {text} as it is a single letter")

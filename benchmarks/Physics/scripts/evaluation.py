@@ -2,6 +2,7 @@ import os
 import json
 import csv
 from tqdm import tqdm
+from datetime import datetime
 from concurrent.futures import ProcessPoolExecutor, as_completed, TimeoutError
 from scripts import extract_boxed
 from scripts import equation_equivilancy
@@ -17,18 +18,23 @@ class VLLMPhysicsEvaluator:
         self.dataset_dir = dataset_dir  # Directory storing all datasets
         self.num_workers = num_workers  # Number of processes for parallel processing
         self.timeout = timeout  # Timeout for a single data entry (seconds)
-
+        self.exist_ids = {}
     def evaluate_entry(self, entry,judge_api_url, judge_api_key,judge_model):
         """Evaluate a single data entry for parallel processing. If stuck or failed, return default error data."""
+        
         try:
             gen_data, dataset_data = entry
             entry_id = gen_data.get("id")
-
+            if entry_id in self.exist_ids:
+                print(f"Entry {entry_id} already exists in the results. Skipping re-evaluation.")
+                return self.exist_ids[entry_id], 0, 0
             llm_answers = gen_data.get("llm_answers")
+            # with open("./llm_answers.md","w") as fil:
+            #     fil.write(llm_answers)
             dataset_answers = dataset_data.get("final_answers", [])
-            # Extract the final answers from the LLM
+            # Extract the final answers from the LLM_answers
             llm_final_answers = extract_boxed.extract_final_answer_allform(llm_answers, answer_type='list')
-
+            # print(f"{entry_id}抽取的最终答案：{llm_final_answers}")
             if not llm_final_answers:
                 flattened_answers = []
             else:
@@ -48,6 +54,7 @@ class VLLMPhysicsEvaluator:
                 for dataset_answer in dataset_answers:
                     # print(llm_answer, dataset_answer)
                     equivalency_data = equation_equivilancy.is_equiv(llm_answer, dataset_answer ,llm_answers, dataset_answers,judge_api_url, judge_api_key,judge_model, verbose=False)
+                    # print(f"{entry_id}模型的答案：\n{llm_answer}、\n参考答案：\n{dataset_answer}、\n大模型判断是否相等的答案：\n{equivalency_data}")
                     equivalency_results.append(equivalency_data)
 
                     sympy_result = equivalency_data.get("sympy_result")
@@ -125,8 +132,15 @@ class VLLMPhysicsEvaluator:
             entries = list(zip(gen_lines, gen_lines))
             results = []
             accuracies = []
-            with open(output_jsonl, "w") as outfile:
-                with ProcessPoolExecutor(max_workers=self.num_workers) as executor:
+            
+            if os.path.exists(output_jsonl):
+                with open(output_jsonl, "r") as outfile:
+                    for line in outfile:
+                        result = json.loads(line.strip())
+                        self.exist_ids[result.get("id")] = result
+                print(f"Output file {output_jsonl} already exists. Appending results.")
+            
+            with ProcessPoolExecutor(max_workers=self.num_workers) as executor:
                     futures = {executor.submit(self.evaluate_entry, entry,judge_api_url, judge_api_key,judge_model): entry for entry in entries}
                     
                     for future in tqdm(as_completed(futures), total=len(futures), desc=f"Evaluating {llm_folder}/{dataset_folder}"):
@@ -160,13 +174,14 @@ class VLLMPhysicsEvaluator:
                                 'finish_reason':None,
                                 'completion_tokens':None
                             }
-
-                        
+                        tqdm.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}:评估数据{result['id']}完成.")
                         # json.dump(result, outfile, ensure_ascii=False)
-                        outfile.write(json.dumps(result, ensure_ascii=False)+'\n')
+                        with open(output_jsonl, "a") as outfile:
+                            if result['id'] not in self.exist_ids:
+                                outfile.write(json.dumps(result, ensure_ascii=False)+'\n')
                         results.append(result)
                         accuracies.append(result["accuracy"])
-
+                        
             overall_accuracy = sum(accuracies) / len(accuracies) if accuracies else 0.0
             
             # with open(output_jsonl, "w") as outfile:
@@ -198,15 +213,15 @@ def eval_main(base_output_dir,judge_api_url, judge_api_key,judge_model):
         timeout=60  # Set maximum execution time per entry
     )
     evaluator.process_all_llm_outputs(sub,judge_api_url, judge_api_key,judge_model)
-# if __name__ == "__main__":
-#     args = parse_args()
+if __name__ == "__main__":
+    args = parse_args()
     
-#     sub = args.base_output_dir.split('/')[-1]
-#     print(f'start evaluation task :{sub}')
-#     evaluator = VLLMPhysicsEvaluator(
-#         base_output_dir=args.base_output_dir,
-#         dataset_dir=sub,
-#         num_workers=64,  # Parallel evaluation of data entries
-#         timeout=1  # Set maximum execution time per entry
-#     )
-#     evaluator.process_all_llm_outputs(task=sub)
+    sub = args.base_output_dir.split('/')[-1]
+    print(f'start evaluation task :{sub}')
+    evaluator = VLLMPhysicsEvaluator(
+        base_output_dir=args.base_output_dir,
+        dataset_dir=sub,
+        num_workers=64,  # Parallel evaluation of data entries
+        timeout=1  # Set maximum execution time per entry
+    )
+    evaluator.process_all_llm_outputs(task=sub)

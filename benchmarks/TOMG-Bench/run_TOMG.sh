@@ -21,7 +21,7 @@ run_infer() {
     echo "启动推理任务: ${model}"
     echo "日志文件保存在: ${log_file}"
     echo "输出目录: ${output_dir}"
-    local cmd="nohup python -u run_TOMG.py"
+    local cmd="nohup python -u run.py"
     cmd="$cmd --api_url \"${api_url}\""
     cmd="$cmd --api_key \"${api_key}\""
     cmd="$cmd --model \"${model}\""
@@ -38,6 +38,8 @@ run_infer() {
     cmd="$cmd --timeout \"${timeout}\""
     cmd="$cmd --output_dir \"${output_dir}\""
     cmd="$cmd --sample_num 100"
+    cmd="$cmd --task MolEdit"
+    cmd="$cmd --subtask AddComponent"
     cmd="$cmd > \"${log_file}\" 2>&1 &"
 
     eval $cmd
@@ -45,7 +47,8 @@ run_infer() {
     echo "任务已启动，PID: ${pid}"
 }
 
-run_infer "http://0.0.0.0:8900/v1"  "EMPTY" "S1" 100 "" "" "" 1.0 1800  "./outputs/" ""
+# run_infer "http://gpunode64:5432/v1"  "EMPTY" "Qwen3_8B_1" 100 "" "" "" 1.0 1800  "./outputs/" ""
+run_infer "http://gpunode64:5432/v1"  "EMPTY" "Qwen3_8B_1" 100 "" "" "" 1.0 1800  "./outputs/" "/data02/home/zdhs0073/Benchmark/TOMG-Bench_github_0813/outputs/TOMG-bench_Qwen3_8B_1_20250813-192937"
 
 
 echo "可以使用以下命令查看所有进程:"

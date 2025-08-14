@@ -10,7 +10,12 @@ import time
 import json
 import os
 
+import math
+import threading
+
+
 from openai import OpenAI
+from loguru import logger
 
 from chembench.evaluate import ChemBenchmark, save_topic_reports
 from chembench.prompter import PrompterBuilder
@@ -20,7 +25,7 @@ from chembench.utils import enable_logging
 def parse_args():
     parser = argparse.ArgumentParser(description="ChemBench Benchmark Runner")
     parser.add_argument("--api_url", type=str, required=True, help="待评测模型的接口地址")
-    parser.add_argument("--api_key", type=str, default=os.environ.get("API_KEY", "EMPTY"), help="模型的 API 密钥。如果未提供，则从环境变量 API_KEY 中读取，默认 Empty")
+    parser.add_argument("--api_key", type=str, default=None, help="待评测模型的key，未传则读取环境变量")
     parser.add_argument("--model", type=str, required=True, help="模型名称")
     parser.add_argument("--num_workers", type=int, default=64, help="并发数量")
     parser.add_argument("--max_tokens", type=int, default=None, help="生成最大长度")
@@ -28,12 +33,13 @@ def parse_args():
     parser.add_argument("--top_p", type=float, default=None, help="累计概率阈值")
     parser.add_argument("--presence_penalty", type=float, default=None, help="存在惩罚")
     parser.add_argument("--timeout", type=int, default=3600, help="调用超时时间")
+    parser.add_argument("--evaluation_checkpoint", type=str, default=None, help="评测断点保存路径")
     return parser.parse_args()
 
 args = parse_args()
 
-API_KEY = args.api_key
-if not args.api_key:
+API_KEY = args.api_key or os.getenv("API_KEY")
+if not API_KEY:
     raise ValueError("API Key 未设置，请通过参数或环境变量传入。")
 
 MODEL_CONFIG = {
@@ -45,13 +51,37 @@ MODEL_CONFIG = {
     "temperature": args.temperature,
     "top_p": args.top_p,
     "presence_penalty": args.presence_penalty,
-    "timeout": args.timeout
+    "timeout": args.timeout,
+    "evaluation_checkpoint": args.evaluation_checkpoint
 }
 
-
-
-EVALUATION_MAP = {}
+EVALUATION_MAP_LOCK = threading.Lock()
 EVALUATION_JSON_LIST = []
+EVALUATION_MAP = {}
+
+# 检查是否断点续测
+if MODEL_CONFIG["evaluation_checkpoint"]:
+    SAVE_DIR = os.path.dirname(os.path.dirname(MODEL_CONFIG["evaluation_checkpoint"]))
+    # 读取EVALUATION_JSON_LIST
+    try:
+        with open(os.path.join(SAVE_DIR, "evaluation.json"), 'r', encoding='utf-8') as f:
+            EVALUATION_JSON_LIST = json.load(f)
+        with open(os.path.join(SAVE_DIR, "temp_evaluation_map.json"), 'r', encoding='utf-8') as f:
+            EVALUATION_MAP = json.load(f)
+        print(f"已加载断点续测数据，记录数: {len(EVALUATION_JSON_LIST)}")
+    except Exception as e:
+        print(f"加载断点续测数据失败: {e}")
+        print(f"未找到断点续测文件: {SAVE_DIR}/evaluation.json，初始化为空列表。")
+        EVALUATION_JSON_LIST = []
+        EVALUATION_MAP = {}
+else:
+    SAVE_DIR = f"outputs/ChemBench_{MODEL_CONFIG['model']}_{time.strftime('%Y%m%d_%H%M%S')}"
+    print(f"未设置断点续测，评测结果将保存到: {SAVE_DIR}")
+    EVALUATION_JSON_LIST = []
+    EVALUATION_MAP = {}
+os.makedirs(SAVE_DIR, exist_ok=True)
+
+
 
 class OpenAIHTTPModel:
     """OpenAI API 封装类"""
@@ -80,7 +110,7 @@ class OpenAIHTTPModel:
             params = {k: v for k, v in params.items() if v is not None}
             response = self.client.chat.completions.create(**params)
             prompt = messages[0].get("content", "")
-            finish_reason = getattr(response.choices[0], "finish_reason", "null")
+            finish_reason = getattr(response.choices[0], "finish_reason", None)
             completion_tokens = getattr(response.usage, "completion_tokens", 0) if hasattr(response, "usage") else 0
             status_code = getattr(response, "status_code", None)
             now_time = time.strftime("%Y-%m-%d %H:%M:%S ", time.localtime())
@@ -100,12 +130,19 @@ class OpenAIHTTPModel:
                 print(f"{now_time}调用成功:{response}")
                 print(f"{now_time}模型回答:{content}")
                 if prompt not in EVALUATION_MAP:
-                    EVALUATION_MAP[prompt] = [{"prompt": prompt, "prediction": text, "finish_reason": finish_reason, "completion_tokens": completion_tokens}]
+                    with EVALUATION_MAP_LOCK:
+                        EVALUATION_MAP[prompt] = [{"prompt": prompt, "prediction": text, "finish_reason": finish_reason, "completion_tokens": completion_tokens}]
                 else:
-                    EVALUATION_MAP[prompt].append({"prompt": prompt, "prediction": text, "finish_reason": finish_reason, "completion_tokens": completion_tokens})
+                    with EVALUATION_MAP_LOCK:
+                        EVALUATION_MAP[prompt].append({"prompt": prompt, "prediction": text, "finish_reason": finish_reason, "completion_tokens": completion_tokens})
+                # 保存EVALUATION_MAP到文件
+                with EVALUATION_MAP_LOCK:
+                    with open(os.path.join(SAVE_DIR, "temp_evaluation_map.json"), 'w', encoding='utf-8') as f:
+                        json.dump(EVALUATION_MAP, f, ensure_ascii=False, indent=4)
+
         except Exception as e:
             text = ""
-            finish_reason = "null"
+            finish_reason = None
             completion_tokens = 0
             now_time = time.strftime("%Y-%m-%d %H:%M:%S ", time.localtime())
             status_code = getattr(e, "status_code", None)
@@ -129,13 +166,85 @@ class OpenAIHTTPModel:
 class CustomChemBenchmark(ChemBenchmark):
     def evaluate_topic(self, topic_questions, prompter, model_kwargs, batch_size=8):
         """重写evaluate_topic方法来收集每条评估数据"""
-        results = super().evaluate_topic(topic_questions, prompter, model_kwargs, batch_size)
-        for result in results:
-            if result:
-                formatted_data = self.format_evaluation_data(result, topic_questions.topic)
-                if formatted_data:
-                    EVALUATION_JSON_LIST.append(formatted_data)
-        return results
+        if batch_size < 1:
+            raise ValueError(f"batch_size must be >= 1, got {batch_size}")
+
+        if self.state.is_topic_complete(topic_questions.topic):
+            logger.info(f"Skipping completed topic: {topic_questions.topic}")
+            return []
+
+        # Get incomplete tasks
+        incomplete_tasks = [task for task in topic_questions.tasks if not self.state.is_question_complete(topic_questions.topic, task._uuid)]
+
+        if not incomplete_tasks:
+            logger.info(f"All tasks in topic {topic_questions.topic} are completed")
+            self.state.mark_topic_complete(topic_questions.topic)
+            self.state.save()
+            return []
+
+        topic_reports = []
+        total_batches = math.ceil(len(incomplete_tasks) / batch_size)
+
+        try:
+            # 新增：初始化进度条
+            from tqdm import tqdm  # tqdm for progress bar
+            progress_bar = tqdm(total=len(incomplete_tasks), desc=f"Topic {topic_questions.topic} Progress", unit="task")
+            # Process tasks in batches
+            for batch_idx in range(total_batches):
+                start_idx = batch_idx * batch_size
+                end_idx = min(start_idx + batch_size, len(incomplete_tasks))
+                current_batch = incomplete_tasks[start_idx:end_idx]
+
+                logger.debug(f"Processing batch {batch_idx + 1}/{total_batches} for topic {topic_questions.topic}")
+
+                # Use batch processing via report_batch
+                batch_reports = prompter.report_batch(current_batch, model_kwargs)
+
+                # Process each result in the batch
+                for task, report in zip(current_batch, batch_reports):
+                    try:
+                        if self.verbose:
+                            self.save_report(report.model_dump(), f"{task._uuid}.json")
+                        topic_reports.append(report.model_dump())
+                        # 新增：格式化评估数据
+                        formatted_data = self.format_evaluation_data(report.model_dump(), topic_questions.topic)
+                        EVALUATION_JSON_LIST.append(formatted_data)
+
+                        self.state.mark_question_complete(topic_questions.topic, task._uuid)
+                        self.state.add_result(task._uuid, report.model_dump())  # Save result to state
+                        self.state.save()
+                        # 新增：保存评估数据到文件
+                        with open(os.path.join(SAVE_DIR, "evaluation.json"), 'w', encoding='utf-8') as f:
+                            json.dump(EVALUATION_JSON_LIST, f, ensure_ascii=False, indent=4)
+
+                    except Exception as e:
+                        logger.error(f"Error processing result for task {task._uuid}: {e}")
+                        if not self.skip_errors:
+                            raise
+
+                # 每完成一个 batch，更新进度条
+                progress_bar.update(len(current_batch))
+                
+                # Optional timeout between batches
+                if self.timeout and batch_idx < total_batches - 1:
+                    time.sleep(self.timeout)
+
+            progress_bar.close()  # 关闭进度条
+            
+            # Mark topic as complete if all tasks are done
+            if len(topic_reports) == len(incomplete_tasks):
+                self.state.mark_topic_complete(topic_questions.topic)
+                self.state.save()
+                # 新增：保存评估数据到文件
+                with open(os.path.join(SAVE_DIR, "evaluation.json"), 'w', encoding='utf-8') as f:
+                    json.dump(EVALUATION_JSON_LIST, f, ensure_ascii=False, indent=4)
+
+        except Exception as e:
+            logger.error(f"Error processing topic {topic_questions.topic}: {e}")
+            if not self.skip_errors:
+                raise
+
+        return topic_reports
 
     def format_evaluation_data(self, report_dict, topic):
         """将benchmark结果格式化为指定的JSON格式"""
@@ -158,7 +267,7 @@ class CustomChemBenchmark(ChemBenchmark):
                             evaluation_result = item
                             break
             else:
-                evaluation_result = {"prompt": "", "prediction": "", "finish_reason": "null", "completion_tokens": 0}
+                evaluation_result = {"prompt": "", "prediction": "", "finish_reason": None, "completion_tokens": 0}
             # 从results中提取生成结果和评估指标
             results_list = report_dict.get('results', [])
             if not results_list:
@@ -204,7 +313,7 @@ class CustomChemBenchmark(ChemBenchmark):
             result_correct = bool(metrics.get('all_correct', False))
             # 提取使用统计信息
             completion_tokens = evaluation_result.get('completion_tokens', 0)
-            finish_reason = evaluation_result.get('finish_reason', "stop")
+            finish_reason = evaluation_result.get('finish_reason', None)
             # 确定学科分类
             subtask = topic
             # 构建最终的JSON格式
@@ -228,7 +337,24 @@ class CustomChemBenchmark(ChemBenchmark):
             return formatted_item
         except Exception as e:
             print(f"Error formatting evaluation data: {e}")
-            return None
+            error_formatted_item = {
+                "id": report_dict.get('uuid', ''),
+                "task": "Chemistry",
+                "subtask": topic,
+                "question": "",
+                "generation": {
+                    "reasoning_content": "",
+                    "content": ""
+                },
+                "gold": "",
+                "pred": "",
+                "result": False,
+                "usage": {
+                    "completion_tokens": 0,
+                    "finish_reason": None
+                }
+            }
+            return error_formatted_item
 
 def generate_score_json(
     evaluation_json_list,
@@ -366,26 +492,27 @@ def generate_score_json(
 def main():
     enable_logging()
 
+    # 初始化模型实例
     model_instance = OpenAIHTTPModel(
         api_base=MODEL_CONFIG["api_url"],
         api_key=MODEL_CONFIG["api_key"],
         model_name=MODEL_CONFIG["model"]
     )
 
-    save_dir = f"outputs/ChemBench_{MODEL_CONFIG['model']}_{time.strftime('%Y%m%d_%H%M%S')}"
-    os.makedirs(save_dir, exist_ok=True)
+    # 运行ChemBench评测
     benchmark = CustomChemBenchmark.from_huggingface(
-        report_dir=save_dir,
+        report_dir=SAVE_DIR,
         run_id=MODEL_CONFIG["model"],
-        verbose=True
+        verbose=True,
+        state_file=MODEL_CONFIG["evaluation_checkpoint"]
     )
     prompter = PrompterBuilder.from_model_object(model=model_instance)
     results = benchmark.bench(prompter, batch_size=MODEL_CONFIG.get("num_workers", 1))
     save_topic_reports(benchmark, results)
     print("Benchmark completed and reports saved.")
 
-    # 保存评估数据到JSON文件
-    output_filename = f"{save_dir}/evaluation.json"
+    # 保存evaluation.json
+    output_filename = os.path.join(SAVE_DIR, "evaluation.json")
     with open(output_filename, 'w', encoding='utf-8') as f:
         json.dump(EVALUATION_JSON_LIST, f, ensure_ascii=False, indent=4)
     print(f"Evaluation data saved to {output_filename}")
@@ -399,7 +526,7 @@ def main():
         max_tokens=MODEL_CONFIG["max_tokens"],
         top_p=MODEL_CONFIG["top_p"]
     )
-    score_filename = f"{save_dir}/score.json"
+    score_filename = os.path.join(SAVE_DIR, "score.json")
     with open(score_filename, "w", encoding="utf-8") as f:
         json.dump(score_json, f, ensure_ascii=False, indent=4)
     print(f"Score data saved to {score_filename}")

@@ -1,2 +1,0 @@
-[console_scripts]
-clean-reports = chembench.helper:clean_report_folder_cli

@@ -830,25 +830,11 @@ def delete_files_with_keywords(folder_path,model,wait=8):
     删除指定文件夹及其所有子文件和子文件夹
     :param folder_path: 目标文件夹路径
     """
-    folder_path_open_generation = os.path.join(folder_path, 'open_generation')
-    
     folder_path_list = folder_path.split('/')
+    print(f"folder_path_list: {json.dumps(folder_path_list,indent=4,ensure_ascii=False)}")
     folder_path_open_model = os.path.join('/'.join(folder_path_list[:-1]), model)
 
-    file_deepth = 6
-    if os.path.exists(folder_path_open_generation):
-        print(f"===========待删除文件夹路径============\n{folder_path_open_generation}\n====================================")
-        if len(folder_path_open_generation.split('/')) < file_deepth:
-            print(f"文件夹深度小于{file_deepth}，可能不是正确的待删除文件夹路径，请检查！")
-            return
-        for wait_time in range(wait, 0, -1):  # 等待8秒，给用户时间查看结果
-            time.sleep(1)
-            print(f"将在 {wait_time} 秒后删除中间结果文件, 请查看 待删除文件夹路径 是否正确...")
-        shutil.rmtree(folder_path_open_generation)
-        print(f"已删除文件夹及其所有内容：{folder_path_open_generation}")
-    else:
-        print(f"文件夹不存在：{folder_path_open_generation}")
-        
+    file_deepth = 5
     
     if os.path.exists(folder_path_open_model):
         print(f"===========待删除文件夹路径============\n{folder_path_open_model}\n====================================")

@@ -202,7 +202,14 @@ class ChemBenchModel:
 
         def _batch_completion():
             responses = litellm.batch_completion(model=self.model, messages=prompt, timeout=1200000000, max_workers=1000, **model_kwargs)
-            return [LiteLLMMessage(role="assistant", content=response.choices[0].message.content) for response in responses]
+            result = []
+            for response in responses:
+                try:
+                    content = response.choices[0].message.content
+                except Exception:
+                    content = ""
+                result.append(LiteLLMMessage(role="assistant", content=content))
+            return result
 
         return self._handle_retry("batch completion", _batch_completion)
 
